@@ -1,2 +1,15 @@
 *.git/COMMIT_EDITMSG
-who is this 
+ import hashlib
+import secrets
+
+# Generate a cryptographic key (symbolizing the "Key to the Abyss")
+def generate_key():
+    return secrets.token_hex(32)  # 256-bit key
+
+# Encrypt a "hidden message" using SHA-256 hashing
+def encrypt_message(message, key):
+    combined = message.encode() + key.encode()
+    return hashlib.sha256(combined).hexdigest()
+
+# Attempt to "unlock" the hidden message (simulating knowledge retrieval)
+def unlock_knowledge(input_key, stored
